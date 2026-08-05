@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+
+# Local Environment Variables
+.env
+.env.local
+
+# Database logs
+data/
+
+# Build and Vercel artifacts
+.vercel
+.ds_store
