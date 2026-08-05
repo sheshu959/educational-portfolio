@@ -393,6 +393,80 @@ section {
   box-shadow: var(--glow-shadow);
 }
 
+/* Hero Profile Card */
+.hero-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-blue));
+}
+
+.profile-glow-ring {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-blue));
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.4), 0 0 60px rgba(127, 83, 172, 0.2);
+  animation: profileGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes profileGlow {
+  from { box-shadow: 0 0 20px rgba(0, 242, 254, 0.3), 0 0 40px rgba(127, 83, 172, 0.15); }
+  to   { box-shadow: 0 0 40px rgba(0, 242, 254, 0.6), 0 0 80px rgba(127, 83, 172, 0.3); }
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.profile-name-tag {
+  text-align: center;
+}
+
+.profile-tag-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.profile-tag-role {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+
 /* Academic & Education Hub */
 .edu-grid {
   display: grid;
